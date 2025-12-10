@@ -1,0 +1,147 @@
+    
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* Colors pulled from the image design */
+    --text-dark: #1E2050;    /* Dark Blue/Navy for headings */
+    --text-body: #2C4B5F;    /* Muted teal/blue for body text */
+    --btn-bg: #2D235C;       /* Deep Indigo/Purple for button */
+    --btn-text: #ffffff;
+    --bg-top: #ffffff;
+    --bg-bottom: #6EE7B7;    /* Mint Green gradient bottom */
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Using Arial as a fallback for a clean sans-serif */
+    /* Gradient Background */
+    background: linear-gradient(to bottom, var(--bg-top) 0%, #dcfce7 60%, var(--bg-bottom) 100%);
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* 2. LAYOUT ELEMENTS */
+
+/* Main Container */
+.container {
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Typography */
+h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+/* The Phone Container */
+.phone-mockup {
+    width: 280px;
+    height: 550px;
+    background-color: #000;
+    border-radius: 40px;
+    padding: 10px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2); /* Drop shadow for depth */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid #333; /* Phone bezel */
+}
+
+/* Phone Speaker/Camera notch simulation */
+.phone-mockup::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 6px;
+    background-color: #222;
+    border-radius: 10px;
+    z-index: 2;
+}
+
+/* Side buttons simulation */
+.phone-mockup::after {
+    content: '';
+    position: absolute;
+    top: 100px;
+    left: -8px;
+    width: 4px;
+    height: 40px;
+    background-color: #333;
+    border-radius: 2px 0 0 2px;
+}
+
+.screen-content {
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0;
+    border-radius: 32px;
+    overflow: hidden;
+    position: relative;
+}
+
+.screen-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Subtext */
+.tagline {
+    font-size: 1.1rem;
+    color: var(--text-body);
+    max-width: 80%;
+    line-height: 1.5;
+}
+
+/* Button */
+.download-btn {
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 15px 40px;
+    border-radius: 50px; /* Pill shape */
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-weight: normal;
+    box-shadow: 0 4px 10px rgba(45, 35, 92, 0.2);
+    margin-top: 10px;
+}
+
+.download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(45, 35, 92, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+    .phone-mockup {
+        width: 240px;
+        height: 480px;
+    }
+}
