@@ -20,7 +20,7 @@ body {
     height: 100vh;
     background-image:
         linear-gradient(rgba(110, 231, 183, 0.50), rgba(110, 231, 183, 0.50)),
-        url(./images/background.jpg);
+        url(./images/workstation.jpg);
     background-size: cover;
     filter: grayscale(50%);
 }
